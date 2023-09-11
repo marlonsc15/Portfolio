@@ -1,0 +1,26 @@
+fazer mobile first
+
+escolher font
+
+escolher cores primarias
+
+escolher tema
+
+escolher banco de icones
+
+botao de escolher sessão
+
+responsivel com 375px e 1200px
+
+menu que se reposiciona 
+
+box "quem sou eu"
+
+redes sociais para contato
+
+box de "ferramentas que ja usei"
+
+box de "imagens" dos projetos com links para eles
+
+
+
