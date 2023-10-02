@@ -1,26 +1,26 @@
-fazer mobile first
+fazer mobile first [x]
 
-escolher font
+escolher font [x]
 
-escolher cores primarias
+escolher cores primarias [x]
 
-escolher tema
+escolher tema [x]
 
-escolher banco de icones
+escolher banco de icones [x]
 
-botao de escolher sessão
+botao de escolher sessão [x]
 
-responsivel com 375px e 1200px
+responsivel com 375px e 1200px [x]
 
-menu que se reposiciona 
+menu que se reposiciona  []
 
-box "quem sou eu"
+box "quem sou eu" [x]
 
-redes sociais para contato
+redes sociais para contato []
 
-box de "ferramentas que ja usei"
+box de "ferramentas que ja usei" [x]
 
-box de "imagens" dos projetos com links para eles
+box de "imagens" dos projetos com links para eles []
 
 
 

@@ -1,33 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+
+:root {
+    --blue-main: #00b8ff;
+    --Violet: #ff00c1;
+    --dark-grey: #333333;
+    --grey: #4D4D4D;
+    --light-grey: #8C8C8C;
+    --white: #fff;
+    --black: #000;
+    --font-orbitron: 'Orbitron';
+    --font-conforta: 'Comfortaa';
+
 }
 
 html {
     min-width: 375px;
     max-width: 375px;
+    scroll-behavior: smooth;
+
 }
 
-.main {
-    background: rgba(0, 0, 0, 0.925);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#main {
     display: grid;
     align-items: center;
+    height: auto;
 }
+
+#main .backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+
 
 #menu {
     display: block;
     height: 100%;
-    background-color: black;
+    background-color: var(--black);
     width: 200px;
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
+}
+
+
+#hidden {
+    position: fixed;
+    display: none;
+    width: 1000vh;
+    height: 1000vh;
+    z-index: 0;
+    background-color: #07223ad2;
 }
 
 .menu-btn {
@@ -42,13 +80,13 @@ html {
     height: 40px;
     cursor: pointer;
     transition: all .3s ease-in-out;
-    border: 3px solid #fff;
+    border: 3px solid var(--white);
 }
 
 .menu-btn__burger {
     width: 25px;
     height: 2px;
-    background: #fff;
+    background: var(--white);
     border-radius: 5px;
     box-shadow: 5px;
     transition: all .3s ease-in-out;
@@ -60,7 +98,7 @@ html {
     position: absolute;
     width: 25px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(225, 101, 47, .2);
     transition: all .3s ease-in-out;
@@ -89,7 +127,7 @@ html {
 }
 
 .menuLinks {
-    background-color: black;
+    background-color: var(--black);
     margin-top: 25%;
     align-items: left;
     list-style: none;
@@ -98,84 +136,466 @@ html {
 
 a {
     display: flex;
-    color: white;
+    color: var(--blue-main);
     align-items: center;
     justify-content: center;
-    font-family: 'Comfortaa', cursive;
+    font-family: var(--font-orbitron);
     font-weight: 300;
     height: 50px;
     margin-top: 5%;
     text-decoration: none;
+
     padding: 0;
 }
 
-a:hover {
-    border-left: 15px solid #1414aa;
-    text-shadow: 4px 4px #1414aa;
-}
 
-.bio {
-    display: grid;
+
+#bio {
+    display: flex;
+    justify-content: center;
     grid-template-columns: 25% 75%;
     margin-top: 25%;
-
+    z-index: 2;
+    width: 100%;
 }
 
-.myFace {
-    width: 60px;
-    height: 60px;
-    margin: auto;
-}
 
 h1 {
     color: white;
-    text-shadow: 2px 2px #1414aa;
-    font-family: 'Comfortaa', cursive;
+    text-shadow: 4px 3px var(--blue-main);
+    font-family: var(--font-orbitron);
     font-weight: 300;
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
+    width: 200px;
+    margin: auto;
 }
 
 h3 {
     color: white;
-    font-size: 14px;
-    width: 240px;
+    font-size: 16px;
+    width: 330px;
     font-weight: 300;
-    text-align: justify;
-    font-family: 'Comfortaa', cursive;
-    margin: auto;
-    text-shadow: 2px 2px #1414aa;
+    text-align: center;
+    font-family: var(--font-orbitron);
+    margin: 2em auto;
 }
 
-.boxFerramentas {
+#projectDescription {
+    display: none;
+}
+
+.division {
+    width: 90%;
+    height: 2px;
+    background-color: #113c61;
+    margin: 1em auto;
+    z-index: 2;
+}
+
+.boxTools {
+    z-index: 2;
+}
+
+#iconTools {
     display: flex;
-    background-color: rgb(196, 196, 196);
     justify-content: space-around;
+    background-color: transparent;
 }
 
 .iconBox {
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     width: 70px;
     height: 70px;
 }
 
 .icons {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    transition: all 0.4s ease-out;
-}
-
-
-.icons:hover{
     width: 55px;
     height: 55px;
-    background-color: #1414aa;
+    transition: all 0.4s ease-out;
+    background-color: var(--blue-main);
     border-radius: 6px;
 }
 
+.icons:hover {
+    width: 60px;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 6px;
+}
+
+#toolsDescription {
+    display: flex;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    font-family: var(--font-conforta);
+    color: var(--white);
+    padding: 1em;
+}
+
+/* #projects {
+    height: 200px;
+    width: 375px;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 2em;
+    z-index: 2;
+    background-color: var(--blue-main);
+    box-shadow: inset 0 0 0.5em 0 var(--blue-main), 0 0 0.5em 0 var(--blue-main);
+
+}
+
+.navigation {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 20px;
+    height: 17px;
+    border: 2px solid var(--blue-main);
+    margin: 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.bar:hover {
+    background-color: var(--blue-main);
+    border: var(--blue-main);
+}
+
+input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slide {
+    width: 20%;
+    transition: .6s;
+}
+
+.slide img {
+    width: 90%;
+    margin: 5%;
+    height: 90%;
+    border-radius: 15px;
+    border: 4px solid var(--blue-main);
+    z-index: 1;
+}
+
+#slide1:checked~.navigation #bar1 {
+    border: var(--blue-main);
+    background-color: var(--blue-main);
+}
+
+#slide2:checked~.navigation #bar2 {
+    border: var(--blue-main);
+    background-color: var(--blue-main);
+}
+
+#slide3:checked~.navigation #bar3 {
+    border: var(--blue-main);
+    background-color: var(--blue-main);
+}
+
+#slide4:checked~.navigation #bar4 {
+    border: var(--blue-main);
+    background-color: var(--blue-main);
+}
+
+#slide5:checked~.navigation #bar5 {
+    border: var(--blue-main);
+    background-color: var(--blue-main);
+}
+
+#slide1:checked~.s1 {
+    margin-left: 0;
+}
+
+#slide2:checked~.s1 {
+    margin-left: -20%;
+}
+
+#slide3:checked~.s1 {
+    margin-left: -40%;
+}
+
+#slide4:checked~.s1 {
+    margin-left: -60%;
+}
+
+#slide5:checked~.s1 {
+    margin-left: -80%;
+} */
 
 
-@media screen and (min-width: 1200px) {}
+#contacts {
+    display: flex;
+    margin: auto;
+    z-index: 2;
+}
+
+.iconBoxSocial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.icons {
+    width: 55px;
+    height: 55px;
+    transition: all 0.4s ease-out;
+    background-color: var(--blue-main);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--black);
+    width: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-main);
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 1280px) {
+
+    html {
+        min-width: 1280px;
+        max-width: 1400px;
+    }
+
+    #main {
+        background-image: url(/images/vaporwave-universe-moewalls-com.mp4);
+        background-position: 100%;
+        background-attachment: scroll;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        align-items: center;
+        height: auto;
+    }
+
+    #menu {
+        display: flex;
+        height: auto;
+        background-color: var(--black);
+        width: 55%;
+        position: fixed;
+        top: 1.2em;
+        right: 0;
+        z-index: 10;
+        border-radius: 15px 0 0 0px;
+        border: 1px solid var(--blue-main);
+    }
+
+    .menuLinks {
+        background-color: var(--black);
+        margin-top: 0%;
+        list-style: none;
+        display: flex;
+        width: 90%;
+        align-items: center;
+        margin: auto;
+        height: auto;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--blue-main);
+    }
+
+    a {
+        font-weight: 700;
+        height: 50px;
+        margin-top: 0%;
+        width: 200px;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 3%;
+        border-bottom: 15px solid transparent;
+    }
+
+    a:hover {
+        border-bottom: 15px solid var(--blue-main);
+        border-left: none;
+        text-shadow: 2px 2px var(--Violet),
+            -2px 2px var(--blue-main);
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    #bio {
+        display: flex;
+        justify-content: unset;
+        height: 100vh;
+        grid-template-columns: unset;
+        margin-top: 0%;
+        padding-top: 15%;
+        width: 100%;
+    }
+
+    .bioText {
+        width: 100%;
+    }
+
+    h1 {
+        color: white;
+        text-shadow: -4px 2px var(--blue-main),
+            4px 2px var(--Violet);
+        font-weight: 400;
+        font-size: 75px;
+        text-align: center;
+        width: auto;
+        margin: auto;
+    }
+
+    h3 {
+        background-color: var(--black);
+        font-size: 24px;
+        width: 55%;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-align: left;
+        margin: 2em;
+        margin-left: 0;
+        padding: 1em;
+        box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.466);
+        border-radius: 0 15px 0 0;
+        border-bottom: 15px solid var(--blue-main);
+
+    }
+
+    /* #projects {
+        height: 80vh;
+        width: auto;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: 2em;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 175%;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+    }
+
+    .bar {
+        width: 80px;
+        height: 30px;
+        border: 4px solid var(--blue-main);
+        margin: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .4s;
+    }
+
+    .slide img {
+        width: 70%;
+        margin: 1% 15% 0% 15%;
+        height: 95%;
+        border-radius: 15px;
+        box-shadow: 10px 10px 17px rgba(0, 0, 0, 0.397);
+        border: 4px solid var(--black);
+    }
+
+    #projectDescription {
+        display: flex;
+        background-color: var(--black);
+        color: var(--Violet);
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        font-family: var(--font-conforta);
+        font-size: 25px;
+        font-weight: normal;
+        padding: 2% 5%;
+        z-index: 2;
+        box-shadow: 10px 10px 17px rgba(0, 0, 0, 0.397);
+    } */
+
+
+    #iconTools {
+        display: grid;
+        grid-template-rows: 200px 200px 200px 200px;
+        width: 70%;
+        height: 100vh;
+        margin-left: 15%;
+        background-color: transparent;
+        justify-content: left;
+    }
+
+    .iconBox {
+        display: flex;
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .toolsDesktopDescription {
+        font-size: 20px;
+        font-family: var(--font-conforta);
+        color: var(--white);
+        display: none;
+        margin: 5%;
+    }
+
+    .iconBox:hover {
+        width: 700px;
+    }
+
+    .iconBox:hover .toolsDesktopDescription {
+        display: flex;
+    }
+
+    .icons {
+        width: 100px;
+        height: 100px;
+        transition: all 0.4s ease-out;
+        background-color: var(--blue-main);
+        border-radius: 6px;
+    }
+
+    .icons:hover {
+        width: 150px;
+        height: 150px;
+        background-color: var(--white);
+        border-radius: 6px;
+    }
+
+    #toolsDescription {
+        display: flex;
+        background-color: transparent;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+        font-family: var(--font-conforta);
+        color: var(--white);
+        padding: 1em;
+        display: none;
+    }
+}
