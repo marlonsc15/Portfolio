@@ -4,15 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 
 <body>
 
     <div id="main">
 
-        <video class="backgroundVideo" src="/images/vaporwave-universe-moewalls-com.mp4" autoplay muted loop></video>
+        <form class="color-picker" action="">
+            <fieldset>
+                <legend class="visually-hidden">Escolha o tema</legend>
+                <label class="visually-hidden" for="theme">Light</label>
+                <input type="radio" name="theme" id="lightTheme">
+
+                <label class="visually-hidden" for="theme">Main</label>
+                <input type="radio" name="theme" id="mainTheme">
+
+                <label class="visually-hidden" for="theme">Dark</label>
+                <input type="radio" name="theme" id="darkTheme">
+            </fieldset>
+        </form>
+
         <div class="menu-btn">
             <div class="menu-btn__burger"></div>
         </div>
@@ -20,100 +35,187 @@
         <div id="menu">
 
             <li class="menuLinks">
-                <a href="#bio">Quem sou</a>
-                <a href="#projects">Projetos</a>
-                <a href="#boxTools">Ferramentas</a>
-                <a href="#contacts">Contatos</a>
+                <a class="menuLink" href="#backgroundBlack">Quem sou</a>
+                <a class="menuLink" href="#projectsMain">Projetos</a>
+                <a class="menuLink" href="#contacts">Contatos</a>
             </li>
         </div>
         <div id="hidden"></div>
 
-        <div id="bio">
-
-            <div class="bioText">
-                <h1>Bem vindo.</h1>
-                <h3>Sou o marlon, Programador FrontEnd a 2 anos, e nessa caminhada tenho acumulado muitos projetos que
-                    fiz com bastante dedicação e uma boa playlist para animar o trabalho.
-                </h3>
-            </div>
+        <div class="welcome">
+            <h1>Bem vindo.</h1>
+            <div class="animatedTarge"></div>
         </div>
 
 
-        <div class="projects">
-            <div class="MainProjectBox">
-                <img src="/images/avocados.webp" alt="MainImage">
-                <div class="projectDescription">Aqui estão alguns dos projetos que mais me ergulhei de fazer durante essa jornada!</div>
+        <div id="backgroundBlack">
+            <h3 class="aboutMeText">Sou o <span>Marlon</span>, E estou a 2 anos me decobrindo na area de programação
+                web, mais especificamente voltado para o FrontEnd. <br>
+                Neste periodo tenho acumulado muitos projetos no meu perfiu do GitHub que estou disponibilizando no
+                final deste site para você dar uma olhada! <br>
+                E em cada projeto que eu fazia, e ainda faço, eu busco sempre me aprimorar em novas formas de fazer meus
+                sites e designes. <br>
+                <span>Html</span>, <span>CSS</span> e <span>JS</span> não são as unicas ferramentas
+                que tenho desenvolvido tecnicas, mas tambem tenho trabalhado <span>SCSS</span> como uma forma mais
+                consistente de fazer estilos de pagina, a Framework que tenho contato é a famosa <span>ANGULAR 2+</span>
+                e também com a biblioteca <span>ZORRO</span>. <br>
+                Estar voltado ao FrontEnd n significa que eu não saiba usar bancos de dados! EU tambem tenho certo
+                conhecimento em <span>MYSQL</span> e já usei o <span>POSTMAN</span> para cuidar da minha
+                <span>API</span>.
+            </h3>
+            <div id="projectsMain">
+                <div class="projects">
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/Rocket-Coffe.jpeg" alt="site 1">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>Rocket Coffe</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Um projeto da Rocketseat de site de venda de cafe, trabalhado com <span>HTML</span>,
+                                usando o <span>CSS</span> para fazer um efeito de luz piscando no titulo da pagina e
+                                usando a linguagem de programação <span>JS</span> para mover o usuario para outra pagina
+                                e ativar o botão de ativar o menu quando a pagina for visitada por despositivos moveis.
+                            </p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                                <img class='iconJs' src="/images/icons/js.svg" alt="JAVASCRIPT">
+                                <div class="popUpTools Js">JS</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divisor"></div>
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/Pokedex.jpeg" alt="site 2">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>Pokedex</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Uma site de busca de Pokemons trabalhado em <span>HTML</span> em seu esqueleto, usando o
+                                <span>CSS</span> para dar uma aparencia mais bonita e o ponto principal que é o
+                                <span>JS</span> usado para busca em uma <span>API</span> de pokemons o resultado
+                                desejado.
+                            </p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                                <img class='iconJs' src="/images/icons/js.svg" alt="JAVASCRIPT">
+                                <div class="popUpTools Js">JS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/CountDown.jpeg" alt="site 3">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>CountDown</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Este site foi projetado para funcionar como um contador até o dia do lançamento do
+                                produto. Criado com <span>HTML</span>, <span>CSS</span> e usando <span>JS</span> para
+                                buscar em tempo real
+                                quantos dias, horas, minutos e segundos faltam para o lançamento, junto de um
+                                formulario onde pode ser deixado o e-mail para ser notificado.</p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                                <img class='iconJs' src="/images/icons/js.svg" alt="JAVASCRIPT">
+                                <div class="popUpTools Js">JS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/RocketFlix.jpeg" alt="site 4">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>RocketFlix</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Não sabe oque assistir? esse site utiliza <span>HTML</span> e <span>CSS</span> para
+                                fornecer o visual, junto ao <span>JS</span> que utilizo para fazer a busca em um banco
+                                de dados para de forma aleatoria buscar um filme junto de sua sinopse.</p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                                <img class='iconJs' src="/images/icons/js.svg" alt="JAVASCRIPT">
+                                <div class="popUpTools Js">JS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/YouTube.jpeg" alt="site 5">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>YouTube</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Uma pagina inicial do YouTube, com um menu que se abre pela lateral feito com a
+                                biblioteca <span>JQUERY</span> do <span>JS</span>. Modelado com <span>HTML</span>
+                                <span>CSS</span> E <span>BOOTSTRAP</span> para uma fluidez melhor entre os componentes .
+                            </p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                                <img class='iconJs' src="/images/icons/js.svg" alt="JAVASCRIPT">
+                                <div class="popUpTools Js">JS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divisor"></div>
+                    <div class="projectBox">
+                        <div class="projectImage">
+                            <img class="projectImg" src="/images/projects images/Iframe.jpeg" alt="site 5">
+                            <h2>Clique para ir ao site!</h2>
+                            <p>Iframe</p>
+                        </div>
+                        <div class="projectDescription">
+                            <p>Um site usando <span>Iframe</span> para simular um celular que pode entrar em diversos
+                                aplicativos, e para isso utilizei somente <span>HTML</span> e <span>CSS</span>.</p>
+                            <div class="iconsPack">
+                                <img class="iconCss" src="/images/icons/css3-alt.svg" alt="CSS">
+                                <div class="popUpTools Css">CSS</div>
+                                <img class='iconHtml' src="/images/icons/html5.svg" alt="HTML">
+                                <div class="popUpTools Html">HTML</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="projectBox"><img src="/images/avocados.webp" alt=""></div>
-            <div class="projectBox"></div>
-            <div class="projectBox"></div>
-            <div class="projectBox"></div>
+
+            <div id="contacts">
+                <p>Entre em contato comigo pelo:</p>
+                <div class="iconsBar">
+                    <div id="linkedin" class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/linkedin.svg"
+                            alt="linkedin">
+                    </div>
+                    <div id="github" class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/github.svg"
+                            alt="github">
+                    </div>
+                    <div id="number" class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/phone-solid.svg"
+                            alt="phone">
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- <div id="projects">
-            <div class="slides">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-                <input type="radio" name="slide" id="slide4">
-                <input type="radio" name="slide" id="slide5">
-                <div class="slide s1">
-                    <img id="img1" src="/images/avocados.webp" alt="1">
-                </div>
-                <div class="slide">
-                    <img id="img2" src="images/background.jpg" alt="2">
-                </div>
-                <div class="slide">
-                    <img id="img3" src="/images/avocados.webp" alt="3">
-                </div>
-                <div class="slide">
-                    <img id="img4" src="/images/PhoneMan.jpg" alt="4">
-                </div>
-                <div class="slide">
-                    <img id="img5" src="/images//background.jpg" alt="5">
-                </div>
-                <div class="navigation">
-                    <label class="bar" for="slide1" id="bar1"></label>
-                    <label class="bar" for="slide2" id="bar2"></label>
-                    <label class="bar" for="slide3" id="bar3"></label>
-                    <label class="bar" for="slide4" id="bar4"></label>
-                    <label class="bar" for="slide5" id="bar5"></label>
-                </div>
-            </div>
-        </div>
-        <div id="projectDescription">Aqui estão alguns dos projetos que mais me ergulhei de fazer durante essa jornada
-            de aprendizado!</div> -->
-
-
-        <div class="boxTools">
-            <div id="iconTools">
-                <div class="iconBox"><img class="icons" src="/images/icons/css3-alt.svg" alt="css">
-                    <div class="toolsDesktopDescription"></div>
-                </div>
-                <div class="iconBox"><img class="icons" src="/images/icons/angular.svg" alt="angular">
-                    <div class="toolsDesktopDescription"></div>
-                </div>
-                <div class="iconBox"><img class="icons" src="/images/icons/html5.svg" alt="html">
-                    <div class="toolsDesktopDescription"></div>
-                </div>
-                <div class="iconBox"><img class="icons" src="/images/icons/js.svg" alt="js">
-                    <div class="toolsDesktopDescription"></div>
-                </div>
-            </div>
-            <div id="toolsDescription">
-                Acima estão as ferramentas que mais utilizei nessa jornada!
-            </div>
-        </div>
-
-        <div class="division"></div>
-
-        <div id="contacts">
-            <div class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/linkedin.svg" alt="linkedin"></div>
-            <div class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/github.svg" alt="github"></div>
-            <div class="iconBoxSocial"><img class="iconsSocial" src="/images/icons/phone-solid.svg" alt="phone"></div>
-        </div>
-
-
+        <div id="phoneNumber">(21) 967782569 <img id="arrow" src="/images/icons/chevron-right-solid.svg" alt=""></div>
     </div>
     <script src="script.js"></script>
 </body>

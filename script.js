@@ -2,45 +2,16 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.getElementById('menu');
 let hidden = document.getElementById('hidden');
 let menuOpen = false;
-let main = document.getElementById('main');
-let tools = document.getElementById('tools');
-let description = document.getElementById('toolsDescription');
-let desktopDescription = document.querySelectorAll('.toolsDesktopDescription');
-let icon = document.querySelectorAll('.iconBox');
-
-let slide1 = document.getElementById('img1');
-let slide2 = document.getElementById('img2');
-let slide3 = document.getElementById('img3');
-let slide4 = document.getElementById('img4');
-let slide5 = document.getElementById('img5');
-let projectsDescription = document.getElementById('projectDescription');
-
-let bar1 = document.getElementById('bar1');
-let bar2 = document.getElementById('bar2');
-let bar3 = document.getElementById('bar3');
-let bar4 = document.getElementById('bar4');
-let bar5 = document.getElementById('bar5');
-
-let count = 1;
-document.getElementById('slide1').checked = true;
-
-const toolsDescriptions = [
-    'Não somente sei usar o CSS, mas tambem tenho conhecimento em SCSS para criar os mais variados tipos de estilos para meus apps',
-    'A framekork Angular 2+ é a framekork que tenho mais projetos feitos, de paginas simples até aplicações mais completas como por exemplo um site de gestão de igrejas!',
-    'Um médico deve conhecer bem o esqueleto do corpo humano não é mesmo? Assim deve ser o conhecimento de um programador frontEnd sobre o esqueleto das aplicações que é o HTML 5, e isto é algo que estou disposto a masterizar!',
-    'Nada que um evento de click ou time não resolva não é mesmo? A linguagem de programação Javascript e algumas vezes Typescript é a linguagem que mais utilizo em meus projetos!'
-]
-
-const projectsDescriptions = [
-    'projeto 1',
-    'projeto 2',
-    'projeto 3',
-    'projeto 4',
-    'projeto 5'
-]
+const linkedin = document.getElementById('linkedin');
+const github = document.getElementById('github');
+const number = document.getElementById('number');
+const phoneNumber = document.getElementById('phoneNumber');
+const arrow = document.getElementById('arrow');
+const projectImage = document.querySelectorAll('.projectImage');
+const menuLink = document.querySelectorAll('.menuLink');
 
 menuBtn.addEventListener('click', () => {
-    
+
     if (!menuOpen) {
         menuBtn.classList.add('open');
         menu.style.display = 'block';
@@ -54,6 +25,14 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
+menuLink.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.style.display = 'none'
+        menuOpen = false;
+        hidden.style.display = 'none';
+    });
+});
+
 hidden.addEventListener('click', () => {
     menuBtn.classList.remove('open');
     menu.style.display = 'none';
@@ -61,78 +40,224 @@ hidden.addEventListener('click', () => {
     hidden.style.display = 'none';
 })
 
-icon[0].addEventListener('click', () => {
-    description.innerHTML = toolsDescriptions[0];
+
+projectImage[0].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/Coffe-front-page/');
 })
 
-icon[1].addEventListener('click', () => {
-    description.innerHTML = toolsDescriptions[1];
-    desktopDescription[0].innerHTML = toolsDescriptions[0];
-    
+projectImage[1].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/pokemon/');
 })
 
-icon[2].addEventListener('click', () => {
-    description.innerHTML = toolsDescriptions[2];
-    desktopDescription[2].innerHTML = toolsDescriptions[2];
+projectImage[2].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/Rocket-Countdown/');
 })
 
-icon[3].addEventListener('click', () => {
-    description.innerHTML = toolsDescriptions[3];
-    desktopDescription[3].innerHTML = toolsDescriptions[3];
+projectImage[3].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/RocketFlix/');
 })
 
-slide1.addEventListener('click', () => {
-    window.location.href = "https://github.com/marlonsc15"
+projectImage[4].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/Homepage-Youtube/');
 })
 
-slide2.addEventListener('click', () => {
-    window.location.href = "https://github.com/marlonsc15"
+projectImage[5].addEventListener('click', () => {
+    window.open('https://marlonsc15.github.io/iframe-social/');
 })
 
-slide3.addEventListener('click', () => {
-    window.location.href = "https://github.com/marlonsc15"
+
+
+const iconCss = document.querySelectorAll('.iconCss');
+const showCss = document.querySelectorAll('.Css');
+
+iconCss[0].addEventListener('mouseover', () => {
+    showCss[0].style.display = 'block'
 })
 
-slide4.addEventListener('click', () => {
-    window.location.href = "https://github.com/marlonsc15"
+iconCss[0].addEventListener('mouseout', () => {
+    showCss[0].style.display = 'none'
 })
 
-slide5.addEventListener('click', () => {
-    window.location.href = "https://github.com/marlonsc15"
+iconCss[1].addEventListener('mouseover', () => {
+    showCss[1].style.display = 'block'
 })
 
-bar1.addEventListener('click', () => {
-    projectsDescription.innerHTML = projectsDescriptions[0]
+iconCss[1].addEventListener('mouseout', () => {
+    showCss[1].style.display = 'none'
 })
 
-bar2.addEventListener('click', () => {
-    projectsDescription.innerHTML = projectsDescriptions[1]
+iconCss[2].addEventListener('mouseover', () => {
+    showCss[2].style.display = 'block'
 })
 
-bar3.addEventListener('click', () => {
-    projectsDescription.innerHTML = projectsDescriptions[2]
+iconCss[2].addEventListener('mouseout', () => {
+    showCss[2].style.display = 'none'
 })
 
-bar4.addEventListener('click', () => {
-    projectsDescription.innerHTML = projectsDescriptions[3]
+iconCss[3].addEventListener('mouseover', () => {
+    showCss[3].style.display = 'block'
 })
 
-bar5.addEventListener('click', () => {
-    projectsDescription.innerHTML = projectsDescriptions[4]
+iconCss[3].addEventListener('mouseout', () => {
+    showCss[3].style.display = 'none'
 })
 
-    setInterval (function() {
-        nextImage();
-    }, 3000)
-    
-    function nextImage() {
-        count++;
-        if (count>5) {
-            count = 1;
-        }
-        document.getElementById('slide'+count).checked = true;
-    }
-    
-tools.addEventListener('click', () => {
-    window.scroll({top: window.innerHeight, behavior: 'smooth'})
+iconCss[4].addEventListener('mouseover', () => {
+    showCss[4].style.display = 'block'
+})
+
+iconCss[4].addEventListener('mouseout', () => {
+    showCss[4].style.display = 'none'
+})
+
+iconCss[5].addEventListener('mouseover', () => {
+    showCss[5].style.display = 'block'
+})
+
+iconCss[5].addEventListener('mouseout', () => {
+    showCss[5].style.display = 'none'
+})
+
+//////////
+
+const iconHtml = document.querySelectorAll('.iconHtml');
+const showHtml = document.querySelectorAll('.Html');
+
+iconHtml[0].addEventListener('mouseover', () => {
+    showHtml[0].style.display = 'block'
+})
+
+iconHtml[0].addEventListener('mouseout', () => {
+    showHtml[0].style.display = 'none'
+})
+
+iconHtml[1].addEventListener('mouseover', () => {
+    showHtml[1].style.display = 'block'
+})
+
+iconHtml[1].addEventListener('mouseout', () => {
+    showHtml[1].style.display = 'none'
+})
+
+iconHtml[2].addEventListener('mouseover', () => {
+    showHtml[2].style.display = 'block'
+})
+
+iconHtml[2].addEventListener('mouseout', () => {
+    showHtml[2].style.display = 'none'
+})
+
+iconHtml[3].addEventListener('mouseover', () => {
+    showHtml[3].style.display = 'block'
+})
+
+iconHtml[3].addEventListener('mouseout', () => {
+    showHtml[3].style.display = 'none'
+})
+
+iconHtml[4].addEventListener('mouseover', () => {
+    showHtml[4].style.display = 'block'
+})
+
+iconHtml[4].addEventListener('mouseout', () => {
+    showHtml[4].style.display = 'none'
+})
+
+iconHtml[5].addEventListener('mouseover', () => {
+    showHtml[5].style.display = 'block'
+})
+
+iconHtml[5].addEventListener('mouseout', () => {
+    showHtml[5].style.display = 'none'
+})
+
+////////////
+
+const iconJs = document.querySelectorAll('.iconJs');
+const showJs = document.querySelectorAll('.Js');
+
+iconJs[0].addEventListener('mouseover', () => {
+    showJs[0].style.display = 'block'
+})
+
+iconJs[0].addEventListener('mouseout', () => {
+    showJs[0].style.display = 'none'
+})
+
+iconJs[1].addEventListener('mouseover', () => {
+    showJs[1].style.display = 'block'
+})
+
+iconJs[1].addEventListener('mouseout', () => {
+    showJs[1].style.display = 'none'
+})
+
+iconJs[2].addEventListener('mouseover', () => {
+    showJs[2].style.display = 'block'
+})
+
+iconJs[2].addEventListener('mouseout', () => {
+    showJs[2].style.display = 'none'
+})
+
+iconJs[3].addEventListener('mouseover', () => {
+    showJs[3].style.display = 'block'
+})
+
+iconJs[3].addEventListener('mouseout', () => {
+    showJs[3].style.display = 'none'
+})
+
+iconJs[4].addEventListener('mouseover', () => {
+    showJs[4].style.display = 'block'
+})
+
+iconJs[4].addEventListener('mouseout', () => {
+    showJs[4].style.display = 'none'
+})
+
+
+
+window.sr = ScrollReveal({ reset: true });
+
+
+var fromLeft = {
+    distance: '150%',
+    origin: 'left',
+    opacity: null,
+    duration: 2000,
+};
+
+var fromBottom = {
+    distance: '300%',
+    origin: 'bottom',
+    opacity: 0,
+    duration: 2000
+};
+
+
+sr.reveal('.welcome', { duration: 1000, scale: 0.5 });
+sr.reveal('.projectBox', fromLeft);
+sr.reveal('.aboutMeText', {
+    distance: '30%',
+    origin: 'bottom',
+    opacity: 0,
+    duration: 1000
+});
+
+linkedin.addEventListener('click', () => {
+    window.open('https://www.linkedin.com/in/marlonsc/');
+})
+
+github.addEventListener('click', () => {
+    window.open('https://github.com/marlonsc15');
+})
+
+number.addEventListener('click', () => {
+    phoneNumber.style.display = 'flex'
+})
+
+
+arrow.addEventListener('click', () => {
+    phoneNumber.style.display = 'none'
 })

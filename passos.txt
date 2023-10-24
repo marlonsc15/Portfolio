@@ -1,4 +1,4 @@
-fazer mobile first [x]
+fazer mobile first []
 
 escolher font [x]
 
@@ -16,11 +16,11 @@ menu que se reposiciona  []
 
 box "quem sou eu" [x]
 
-redes sociais para contato []
+redes sociais para contato [x]
 
 box de "ferramentas que ja usei" [x]
 
-box de "imagens" dos projetos com links para eles []
+box de "imagens" dos projetos com links para eles [x]
 
 
 
