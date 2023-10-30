@@ -9,6 +9,7 @@ const phoneNumber = document.getElementById('phoneNumber');
 const arrow = document.getElementById('arrow');
 const projectImage = document.querySelectorAll('.projectImage');
 const menuLink = document.querySelectorAll('.menuLink');
+const main = document.getElementById('main');
 
 menuBtn.addEventListener('click', () => {
 
@@ -25,13 +26,19 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-menuLink.forEach(link => {
-    link.addEventListener('click', () => {
-        menu.style.display = 'none'
-        menuOpen = false;
-        hidden.style.display = 'none';
+if (window.innerWidth < 1200) {
+    menuLink.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.style.display = 'none'
+            menuBtn.classList.remove('open');
+            menuOpen = false;
+            hidden.style.display = 'none';
+        });
     });
-});
+
+}
+
+
 
 hidden.addEventListener('click', () => {
     menuBtn.classList.remove('open');
