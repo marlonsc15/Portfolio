@@ -1,7 +1,6 @@
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.getElementById('menu');
-let hidden = document.getElementById('hidden');
-let menuOpen = false;
+const hidden = document.getElementById('hidden');
 const linkedin = document.getElementById('linkedin');
 const github = document.getElementById('github');
 const number = document.getElementById('number');
@@ -10,6 +9,25 @@ const arrow = document.getElementById('arrow');
 const projectImage = document.querySelectorAll('.projectImage');
 const menuLink = document.querySelectorAll('.menuLink');
 const main = document.getElementById('main');
+const expandText = document.querySelector('.expandText');
+const about = document.querySelector('.aboutMeText');
+let menuOpen = false;
+let aboutOpen = false;
+
+expandText.addEventListener('click', () => {
+
+    if (aboutOpen == false) {
+        about.style.height = '530px';
+        aboutOpen = true;
+        expandText.innerHTML = 'Mostrar menos'
+
+    } else {
+        about.style.height = '180px';
+        aboutOpen = false;
+        expandText.innerHTML = 'Mostrar tudo'
+    }
+})
+
 
 menuBtn.addEventListener('click', () => {
 
@@ -26,18 +44,17 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-if (window.innerWidth < 1200) {
-    menuLink.forEach(link => {
-        link.addEventListener('click', () => {
+
+menuLink.forEach(link => {
+    link.addEventListener('click', () => {
+        if (menuOpen == true) {
             menu.style.display = 'none'
             menuBtn.classList.remove('open');
             menuOpen = false;
             hidden.style.display = 'none';
-        });
+        }
     });
-
-}
-
+});
 
 
 hidden.addEventListener('click', () => {
@@ -71,7 +88,6 @@ projectImage[4].addEventListener('click', () => {
 projectImage[5].addEventListener('click', () => {
     window.open('https://marlonsc15.github.io/iframe-social/');
 })
-
 
 
 const iconCss = document.querySelectorAll('.iconCss');
@@ -224,14 +240,12 @@ iconJs[4].addEventListener('mouseout', () => {
 })
 
 
-
 window.sr = ScrollReveal({ reset: true });
-
 
 var fromLeft = {
     distance: '150%',
     origin: 'left',
-    opacity: null,
+    opacity: 0,
     duration: 2000,
 };
 
@@ -242,14 +256,12 @@ var fromBottom = {
     duration: 2000
 };
 
-
 sr.reveal('.welcome', { duration: 1000, scale: 0.5 });
-sr.reveal('.projectBox', fromLeft);
 sr.reveal('.aboutMeText', {
-    distance: '30%',
-    origin: 'bottom',
-    opacity: 0,
-    duration: 1000
+    scale: 0.7, duration: 800
+});
+sr.reveal('.expandText', {
+    scale: 0.7, duration: 1000
 });
 
 linkedin.addEventListener('click', () => {
@@ -260,11 +272,75 @@ github.addEventListener('click', () => {
     window.open('https://github.com/marlonsc15');
 })
 
-number.addEventListener('click', () => {
-    phoneNumber.style.display = 'flex'
-})
+phoneNumberFalse = true;
 
+number.addEventListener('click', () => {
+    if (phoneNumberFalse) {
+        phoneNumber.style.display = 'flex'
+        phoneNumberFalse = false
+    } else {
+        phoneNumber.style.display = 'none'
+        phoneNumberFalse = true
+    }
+})
 
 arrow.addEventListener('click', () => {
     phoneNumber.style.display = 'none'
+    phoneNumberFalse = true;
+})
+
+function getPageList(totalPages, page, maxlength) {
+    function range(start, end) {
+        return Array.from(Array(end - start + 1), (_, i) => i + start);
+    }
+
+    var sideWidth = maxlength < 9 ? 1 : 2;
+    var leftWidth = (maxlength - sideWidth * 2 - 3) >> 1;
+    var rightWidth = (maxlength - sideWidth * 2 - 3) >> 1;
+
+    if (totalPages <= maxlength) {
+        return range(1, totalPages);
+    }
+
+    if (page <= maxlength - sideWidth - 1 - rightWidth) {
+        return range(1, maxlength - sideWidth - 1).concat(0, range(totalPages - sideWidth + 1, totalPages));
+    }
+
+    if (page >= totalPages - sideWidth - 1 - rightWidth) {
+        return range(1, sideWidth).concat(0, range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages));
+    }
+
+    return range(1, sideWidth).concat(0, range(page - leftWidth, page + rightWidth), 0, range(totalPages - sideWidth + 1, totalPages));
+}
+
+
+$(function () {
+    var numberOfItems = $('.projects .projectBox').length;
+    var limitPerPage = 2;
+    var totalPages = Math.ceil(numberOfItems / limitPerPage);
+    var currentPage;
+
+    function showPage(whichPage) {
+        if (whichPage < 1 || whichPage > totalPages) return false;
+
+        currentPage = whichPage;
+
+        $('.projects .projectBox').hide().slice((currentPage - 1) * limitPerPage, currentPage * limitPerPage).show();
+
+    }
+
+    $('.projects').show();
+    showPage(1);
+
+    $(document).on('click', '.pagination li.currentPage:not(.active)', function () {
+        return showPage(+$(this).text());
+    });
+
+    $('.nextPage').on('click', function () {
+        return showPage(currentPage + 1);
+    });
+
+    $('.previousPage').on('click', function () {
+        return showPage(currentPage - 1);
+    });
 })

@@ -3,8 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-
-    max-width: 375px;
     box-sizing: border-box;
 }
 
@@ -20,7 +18,6 @@
 
 html {
     min-width: 375px;
-    max-width: 375px;
     scroll-behavior: smooth;
 }
 
@@ -92,10 +89,10 @@ html {
 }
 
 :root:has(#lightTheme:checked) {
-    --main: grey;
-    --background: rgb(216, 213, 213);
-    --background-2: rgb(44, 44, 44);
-    --font-color: white;
+    --main: rgb(10, 231, 65);
+    --background: rgb(255, 255, 255);
+    --background-2: rgb(13, 87, 30);
+    --font-color: rgb(216, 213, 213);
     --font-color-2: black;
     --background-3: rgb(216, 213, 213);
 }
@@ -118,6 +115,17 @@ html {
     top: 0;
     right: 0;
     z-index: 9;
+    animation: moveToLeft .2s linear normal;
+}
+
+@keyframes moveToLeft {
+    0% {
+        transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .divisor {
@@ -221,21 +229,21 @@ a {
     height: auto;
 }
 
+
 h1 {
     color: var(--font-color);
     text-shadow: 4px 3px var(--main);
     font-family: var(--font-orbitron);
     font-weight: 300;
-    font-size: 35px;
+    font-size: 2em;
     text-align: center;
     width: 80%;
     margin: 20% 10% 10% 10%;
 }
 
-
 .animatedTarge {
     width: 60%;
-    height: 6px;
+    height: .4em;
     background-color: var(--background);
     left: 20%;
     bottom: 18%;
@@ -247,7 +255,7 @@ h1 {
 .animatedTarge::before {
     content: '';
     width: 40%;
-    height: 10px;
+    height: 1em;
     position: absolute;
     background-color: var(--main);
     animation: animate 1s linear infinite;
@@ -268,16 +276,29 @@ h1 {
 
 .aboutMeText {
     color: var(--font-color-2);
-    font-size: 14px;
+    font-size: 1em;
     width: 90%;
     margin: auto;
+    height: 180px;
+    overflow: hidden;
     margin-top: 20%;
     font-weight: 300;
     font-family: var(--font-orbitron);
     z-index: 1;
     text-align: center;
     padding-bottom: 5%;
-    border-bottom: 10px solid var(--main);
+}
+
+.expandText {
+    color: var(--background);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-orbitron);
+    position: absolute;
+    right: 123px;
+    background-color: var(--main);
+    padding: 5px;
+    border-radius: 0 0 15px 15px;
 }
 
 span {
@@ -295,7 +316,7 @@ span {
 #projectsMain {
     z-index: 2;
     display: grid;
-    margin: 10% 5%;
+    margin: 20% 5%;
     padding: 0;
     position: relative;
     width: 90%;
@@ -313,6 +334,26 @@ span {
     position: relative;
     background-color: var(--background-2);
     color: transparent;
+    animation: shake .1s linear normal;
+}
+
+
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
 }
 
 .projectImg {
@@ -423,6 +464,37 @@ span {
     top: -15px;
     left: 82px;
 }
+
+.pagination {
+    text-align: center;
+    margin: 20px 20px 40px;
+    user-select: none;
+}
+
+.pagination li {
+    display: inline-block;
+    padding: 0% 5%;
+    margin: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1 / 40%);
+}
+
+
+.pagination a {
+    color: #000;
+}
+
+.pagination li:hover {
+    scale: 1.1;
+    text-shadow: 2px 2px var(--font-color);
+    background-color: var(--main);
+}
+
+.previousPage,
+.nextPage {
+    background-color: var(--background-3);
+    border-radius: 3px;
+}
+
 
 #contacts {
     display: flex;
@@ -556,21 +628,49 @@ span {
     cursor: pointer;
 }
 
-@media screen and (min-width: 1200px) {
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-    * {
-        max-width: unset;
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 4em;
     }
 
-    html {
-        min-width: 1200px;
-        max-width: 1400px;
+    .aboutMeText {
+        font-size: 1.6em;
+        height: auto;
     }
 
+    .expandText {
+        display: none;
+    }
+
+    .projectBox {
+        height: 140px;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .projectImage img {
+        width: 250px;
+        height: 140PX;
+    }
+
+    .projectImage p {
+        font-size: 30px;
+        left: 55%;
+        top: 15%;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 1024px) {
     #main {
         display: grid;
         align-items: center;
         height: auto;
+        width: 100%
     }
 
     .visually-hidden {
@@ -589,7 +689,7 @@ span {
         gap: 1em;
         width: fit-content;
         position: fixed;
-        top: 10%;
+        top: 13%;
         left: 1%;
         background: #fff;
         padding: 1em 1em;
@@ -655,7 +755,7 @@ span {
         visibility: hidden;
         display: grid;
         justify-content: unset;
-        height: 600px;
+        height: 35em;
         grid-template-columns: unset;
         background-color: transparent;
         margin-top: 0%;
@@ -666,56 +766,58 @@ span {
         text-shadow: -4px 2px var(--main),
             4px 2px var(--background);
         font-weight: 400;
-        font-size: 75px;
         text-align: center;
         width: auto;
-        margin: 20% auto 0 auto;
+        font-size: 6em;
     }
 
     .animatedTarge {
-        width: 40%;
-        height: 10px;
+        width: 70%;
+        height: .6em;
         background-color: var(--background);
-        left: 30%;
-        bottom: 40%;
-        position: absolute;
         overflow: hidden;
         border-radius: 15px;
+        margin: 5% auto;
+        left: 15%;
+        top: 51%;
     }
 
     .animatedTarge::before {
         content: '';
         width: 40%;
-        height: 10px;
+        height: 1em;
         position: absolute;
         background-color: var(--main);
         animation: animate 1s linear infinite;
     }
 
-
     @keyframes animate {
         0% {
-            transform: translateX(-500px);
+            transform: translateX(-600px);
         }
 
         100% {
-            transform: translateX(500px);
+            transform: translateX(800px);
         }
     }
 
-
     .aboutMeText {
-        font-size: 20px;
+        font-size: 1.6em;
         width: 75%;
+        height: 750px;
+        overflow: none;
         margin: auto;
         font-weight: 300;
         letter-spacing: 2px;
         text-align: left;
-        padding: 10% 0 5% 0;
-        border-bottom: 15px solid var(--main);
+        padding: 10% 0 0 0;
         text-indent: 5%;
         color: var(--font-color-2);
         background-color: transparent;
+    }
+
+    .expandText {
+        display: none;
     }
 
     #projectsMain {
@@ -859,5 +961,117 @@ span {
         display: none;
         top: -20px;
         left: 120px;
+    }
+
+    .pagination  li {
+        margin: 0 4%;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 1440px) {
+    h1 {
+        font-size: 7em;
+        margin: 18%;
+    }
+
+    .animatedTarge {
+        top: 60%;
+        left: 20%;
+        width: 60%;
+    }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+@media screen and (min-width: 2560px) {
+
+    .welcome {
+        height: 80vh;
+    }
+
+    h1 {
+        font-size: 13em;
+    }
+
+    .animatedTarge {
+        height: 1.3em;
+    }
+
+    .animatedTarge::before {
+        height: 1.3em;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateX(-1000px);
+        }
+
+        100% {
+            transform: translateX(1600px);
+        }
+    }
+
+    .aboutMeText {
+        font-size: 3em;
+    }
+
+    .projectBox {
+        height: 20em;
+    }
+
+    .projectBox p {
+        font-size: 1.9em;
+    }
+
+    .projectImage img {
+        width: 500px;
+        height: 100%;
+    }
+
+    .iconsPack {
+        height: 6em;
+    }
+
+    .iconsPack img {
+        width: 110px;
+        height: 100%;
+    }
+
+    #contacts {
+        height: 23em;
+        padding-bottom: 5%;
+    }
+
+    #contacts p {
+
+        font-size: 3em;
+    }
+
+    .iconsBar {
+        height: 7em;
+    }
+
+    .iconBoxSocial {
+        height: 150px;
+        width: 300px;
+    }
+
+    .iconsSocial {
+        width: 90px;
+    }
+
+
+    .iconBoxSocial::before {
+        width: 400px;
+        height: 75px;
+    }
+
+    .iconBoxSocial::after {
+        width: 270px;
+        height: 120px;
     }
 }

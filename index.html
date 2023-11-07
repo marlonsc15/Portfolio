@@ -8,6 +8,8 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -18,14 +20,14 @@
         <form class="color-picker" action="">
             <fieldset>
                 <legend class="visually-hidden">Escolha o tema</legend>
-                <label class="visually-hidden" for="theme">Light</label>
-                <input type="radio" name="theme" id="lightTheme">
-
                 <label class="visually-hidden" for="theme">Main</label>
                 <input type="radio" name="theme" id="mainTheme">
 
                 <label class="visually-hidden" for="theme">Dark</label>
                 <input type="radio" name="theme" id="darkTheme">
+
+                <label class="visually-hidden" for="theme">Light</label>
+                <input type="radio" name="theme" id="lightTheme">
             </fieldset>
         </form>
 
@@ -52,7 +54,7 @@
         <div id="backgroundBlack">
             <h3 class="aboutMeText">Sou o <span>Marlon</span>, E estou a 2 anos me decobrindo na area de programação
                 web, mais especificamente voltado para o FrontEnd. <br>
-                Neste periodo tenho acumulado muitos projetos no meu perfiu do GitHub que estou disponibilizando no
+                Neste periodo tenho acumulado muitos projetos no meu perfil do GitHub que estou disponibilizando no
                 final deste site para você dar uma olhada! <br>
                 E em cada projeto que eu fazia, e ainda faço, eu busco sempre me aprimorar em novas formas de fazer meus
                 sites e designes. <br>
@@ -64,8 +66,11 @@
                 conhecimento em <span>MYSQL</span> e já usei o <span>POSTMAN</span> para cuidar da minha
                 <span>API</span>.
             </h3>
+            <div class="expandText">
+                Mostrar tudo
+            </div>
             <div id="projectsMain">
-                <div class="projects">
+                <div class="projects" style="display: none;">
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/Rocket-Coffe.jpeg" alt="site 1">
@@ -89,7 +94,6 @@
                         </div>
                     </div>
 
-                    <div class="divisor"></div>
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/Pokedex.jpeg" alt="site 2">
@@ -112,7 +116,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divisor"></div>
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/CountDown.jpeg" alt="site 3">
@@ -135,7 +138,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divisor"></div>
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/RocketFlix.jpeg" alt="site 4">
@@ -156,7 +158,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divisor"></div>
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/YouTube.jpeg" alt="site 5">
@@ -178,7 +179,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="divisor"></div>
                     <div class="projectBox">
                         <div class="projectImage">
                             <img class="projectImg" src="images/projects images/Iframe.jpeg" alt="site 5">
@@ -197,6 +197,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="pagination">
+                    <li class="pageItem previousPage "><a class="pageLink">Prev</a></li>
+                    <li class="pageItem nextPage"><a class="pageLink">Next</a></li>
+                </div>
+
             </div>
 
             <div id="contacts">
